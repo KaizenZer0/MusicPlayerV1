@@ -138,15 +138,36 @@ body {
 @media (max-width: 480px) {
     .card {
         width: 100%; /* Full width on very small screens */
-        padding: 10px; /* Add padding for better spacing */
+        padding: 0px; /* Add padding for better spacing */
     }
 
     .card-body {
-        padding: 10px;
+        padding: 0px;
     }
 
     #play-pause-btn {
         font-size: 14px; /* Smaller font size for smaller screens */
         padding: 8px 16px;
+    }
+}
+
+@media (max-width: 200px) {
+    .card {
+        width: 100%; /* Full width on very small screens */
+        padding: 0px; /* Add padding for better spacing */
+    }
+
+    .card-body {
+        padding: 0px;
+    }
+
+    #play-pause-btn {
+        font-size: 8px; /* Smaller font size for smaller screens */
+        padding: 2px 4px;
+    }
+    .card-footer {
+        flex-direction: column; /* Stack items vertically */
+        height: auto; /* Allow footer to expand */
+        padding: 0px;
     }
 }

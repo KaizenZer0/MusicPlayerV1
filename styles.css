@@ -1,0 +1,152 @@
+/* Basic Reset */
+body, h2, p, button {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Full height and center content */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #0d0d0f; /* Background color */
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+}
+
+/* Card styling */
+.card {
+    position: relative;
+    background-image: url('image/hero.png'); /* Background image for the card */
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 90%;
+    width: 650px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 400px;
+    color: white;
+    transition: transform 0.5s ease, box-shadow 0.5s ease, background-color 0.5s ease;
+}
+
+/* Glowing effect when music is playing */
+.card.glowing {
+    /* Glowing effect */
+    box-shadow: 0 0 40px 10px rgba(241, 71, 19, 0.226), 
+                0 0 115px 55px rgba(240, 110, 58, 0.192);
+    animation: rotate 10s linear infinite, glow 5s ease-in-out infinite;
+  }
+ 
+  @keyframes glow {
+    0% {
+      box-shadow: 0 0 100px rgba(248, 75, 22, 0.425);
+    }
+    50%{
+        box-shadow: 0 0 150px rgba(248, 75, 22, 0.377);
+    }
+    100% {
+      box-shadow: 0 0 200px rgba(252, 23, 7, 0.253);
+    }
+  }
+
+/* Card sections */
+.card-header, .card-footer {
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+}
+
+.card-header {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    height: 60px;
+}
+
+.card-body {
+    padding: 20px;
+    flex-grow: 1;
+    display: flex;
+    position: relative;
+    align-items: center;
+}
+
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(360deg, #581a0b, #feb47b00);
+    height: 70px;
+}
+
+.card-footer button {
+    margin-left: auto;
+}
+
+/* Button styling */
+#visualizer {
+    width: 75%;
+    height: 80px;
+    background-color: #22222200;
+    border-radius: 5px;
+    margin: 0;
+    padding-left: 10px;
+}
+
+#play-pause-btn {
+    background-color: #a02500e7;
+    color: rgb(252, 235, 235);
+    border: none;
+    margin-top: 30px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+#play-pause-btn:hover {
+    background-color: #fd460e;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .card {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .card {
+        width: 100%; /* Full width on small screens */
+        height: auto; /* Allow height to adjust */
+    }
+    
+    .card-footer {
+        flex-direction: column; /* Stack items vertically */
+        height: auto; /* Allow footer to expand */
+    }
+
+    .card-footer button {
+        margin-top: 10px; /* Space between title and button */
+    }
+}
+
+@media (max-width: 480px) {
+    .card {
+        width: 100%; /* Full width on very small screens */
+        padding: 10px; /* Add padding for better spacing */
+    }
+
+    .card-body {
+        padding: 10px;
+    }
+
+    #play-pause-btn {
+        font-size: 14px; /* Smaller font size for smaller screens */
+        padding: 8px 16px;
+    }
+}
